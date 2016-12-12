@@ -18,7 +18,7 @@ import { h, Component } from 'preact'
 import subscribe from '../decorators/subscribe'
 import SomeStore from '../stores/some-store'
 
-@subscribe(SomeStore)
+@subscribe(SomeStore) // state of SomeStore: { value: 'variable' }
 export default class MyPage extends Component {
 
   constructor() {
@@ -30,6 +30,8 @@ export default class MyPage extends Component {
   // OR..
   // render = ({ value }) => <h1>There is my { value }!</h1>
 }
+
+ // Renders: There is my variable!
 ```
 ```javascript
 // Filter on property from a store
@@ -38,7 +40,7 @@ import { h, Component } from 'preact'
 import subscribe from '../decorators/subscribe'
 import SomeStore from '../stores/some-store'
 
-@subscribe(SomeStore, 'someProperty')
+@subscribe(SomeStore, 'someProperty') // state of SomeStore: { someProperty: 'variable' }
 export default class MyPage extends Component {
 
   constructor() {
@@ -50,6 +52,8 @@ export default class MyPage extends Component {
   // OR..
   // render = ({ someProperty: value }) => <h1>There is my { value }!</h1>
 }
+
+// Renders: There is my variable!
 ```
 ```javascript
 // Using multiply stores and/or properties
