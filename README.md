@@ -14,9 +14,11 @@ Version 0.001, feel free to comment or to create a pull request.
 ```
 // Subscribe to all changes of a store
 import { h, Component } from 'preact'
+
+import subscribe from '../decorators/subscribe'
 import SomeStore from '../stores/some-store'
 
-@(SomeStore)
+@subscribe(SomeStore)
 export default class MyPage extends Component {
 
   constructor() {
@@ -32,9 +34,11 @@ export default class MyPage extends Component {
 ```
 // Filter on property from a store
 import { h, Component } from 'preact'
+
+import subscribe from '../decorators/subscribe'
 import SomeStore from '../stores/some-store'
 
-@(SomeStore, 'someProperty')
+@subscribe(SomeStore, 'someProperty')
 export default class MyPage extends Component {
 
   constructor() {
@@ -49,7 +53,7 @@ export default class MyPage extends Component {
 ```
 ```
 // Using multiply stores and/or properties
-@(SomeStore, 'someProperty', 'otherProperty')
-@([SomeStore, OtherStore], 'someProperty')
-@([SomeStore, OtherStore], 'someProperty', 'otherProperty', 'someOtherProperty')
+@subscribe(SomeStore, 'someProperty', 'otherProperty')
+@subscribe([SomeStore, OtherStore], 'someProperty')
+@subscribe([SomeStore, OtherStore], 'someProperty', 'otherProperty', 'someOtherProperty')
 ```
