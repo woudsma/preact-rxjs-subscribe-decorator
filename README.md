@@ -11,7 +11,7 @@ Also make sure not to pass DOM elements (or circular structures) to your store, 
 Version 0.001, feel free to comment or to create a pull request.  
 
 ###Usage:
-```
+```javascript
 // Subscribe to all changes of a store
 import { h, Component } from 'preact'
 
@@ -31,7 +31,7 @@ export default class MyPage extends Component {
   // render = ({ value }) => <h1>There is my { value }!</h1>
 }
 ```
-```
+```javascript
 // Filter on property from a store
 import { h, Component } from 'preact'
 
@@ -51,7 +51,7 @@ export default class MyPage extends Component {
   // render = ({ someProperty: value }) => <h1>There is my { value }!</h1>
 }
 ```
-```
+```javascript
 // Using multiply stores and/or properties
 @subscribe(SomeStore, 'someProperty', 'otherProperty')
 @subscribe([SomeStore, OtherStore], 'someProperty')
